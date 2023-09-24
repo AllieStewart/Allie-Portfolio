@@ -1,39 +1,97 @@
 /* Root */
-:root{
-
+:root {
+    --main-text-color: #004d91;
+    --bkgrd-color: #fff;
 }
 
-body{
-
+*{
+    line-height: 1.5;
 }
 
-header{
-
+body {
+    min-height: 100vh;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
 }
 
-h1{
-
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    padding: 1%;
+    background-color: rgb(118, 222, 253);
+    color: #fff;
 }
 
-h2{
+h1 {
+    font-size: 200%;
+    color: var(--main-text-color);
+}
 
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    min-width: 300px;
+    color: #8ac8ff;
+    text-decoration: underline;
+}
+
+h2 {
+    margin: 2% 0;
+    font-size: 150%;
+    color: var(--main-text-color);
 }
 
 main {
+    display: flex;
+    flex: 1 1 0;
+    max-width: 96%;
+    margin: 2% auto;
+}
+
+.sidebar {
 
 }
 
-footer{
+.side-design {
+    align-items: left;
+}
+
+.about-me {
+    margin: 2% 0;
+    font-size: 80%;
+}
+
+.work {
 
 }
+
+.contact-me {
+
+}
+
+/* Insert classes here */
+
+/*footer {
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+    background-color: #8bc6fa;
+    color: #fff;
+}*/
 
 /* Media Queries */
-@media screen and (max-width: 768px) {
-    header {
-      flex-direction: column;
+@media screen and (max-width: 992px) {
+    .sidebar {
+    flex-basis: 40%;
     }
+  }
   
-    main {
-      max-width: 1200px;
+@media screen and (max-width: 768px) {
+    .sidebar {
+      flex-basis: 100%;
+      margin: 1em 0;
     }
   }
