@@ -17,10 +17,10 @@ body {
     align-items: left;
 }
 
-header {
+.main-header {
     display: flex;
     justify-content: space-between;
-    align-items: left;
+    text-align: left;
     padding: 1%;
     background-color: rgb(118, 222, 253);
     color: #fff;
@@ -48,15 +48,17 @@ main {
 }
 
 .sidebar {
-
+    display: block;
 }
 
 .side-design {
-    margin: 2% 0;
+    padding: 5% 1em;
+    border-radius: 5px;
+    margin-top: 10px;
     font-size: 150%;
     color: var(--main-text-color);
     background-color: #fff;
-    align-items: left;
+    align-items: flex-start;
 }
 
 .side-design p {
@@ -73,7 +75,7 @@ main {
 }
 
 .work:hover {
-    
+
 }
 
 .contact-me {
