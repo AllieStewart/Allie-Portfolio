@@ -1,15 +1,19 @@
-/* Root */
+/* Root for main colors used throughout webpage */
 :root {
     --main-text-color: #004d91;
     --bkgrd-color: #fff;
+    --header-bkgrd: rgb(87, 104, 255);
 }
 
+/* Wildcard to apply attributes to all selectors */
 * {
     font-family: 'Helvetica', 'Arial', serif;
     line-height: 1.5;
 }
 
+/* Body of page */
 body {
+    font-family: 'Helvetica', 'Arial', serif;
     min-height: 100vh;
     font-size: 16px;
     display: flex;
@@ -17,6 +21,24 @@ body {
     align-items: left;
 }
 
+/* "Stewart" part of page, with border around name */
+h1 {
+    display: inline-block;
+    border: 2px solid var(--main-text-color);
+    border-radius: 3px;
+    font-size: 200%;
+    color: var(--main-text-color);
+    background-color: var(--header-bkgrd);
+}
+
+/* Main text on crystal image and section names within the body */
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    border-bottom: var(--main-text-color);
+}
+
+/* Top part of page above crystal image, includes "Stewart" and the four sections on right, with downloadable resume */
 .main-header {
     display: flex;
     justify-content: space-between;
@@ -27,81 +49,114 @@ body {
     font-weight: 800;
 }
 
-h1 {
-    font-size: 200%;
-    color: var(--main-text-color);
+/* Crystal image */
+img {
+    position: relative;
+    object-fit: cover;
+    height: 200px;
+    width: 100%;
 }
 
+/* Main text box on crystal image */
+.sub-header h2 {
+    display: block;
+    position: absolute;
+    bottom: 650px;
+    right: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: var(--header-bkgrd);
+    color: var(--main-text-color);
+    font-weight: 800;
+}
+
+/* Navigation elements for About Me, Work, Contact, and Resume */
 nav ul {
     display: flex;
     justify-content: space-between;
     min-width: 300px;
     color: #8ac8ff;
-    text-decoration: underline;
+    text-decoration-line: underline;
+    text-decoration-thickness: 5px;
 }
 
+/* Main content of page */
 main {
     display: flex;
     flex: 1 1 0;
     max-width: 96%;
     margin: 2% auto;
+    flex-wrap: wrap;
 }
 
+/* Trying to place About Me, Work, and Contact to the side */
 .sidebar {
-    display: block;
+    display: flex;
 }
 
+/* The lines alongside the three titles in main (About Me, Work, Contact) */
 .side-design {
-    padding: 5% 1em;
-    border-radius: 5px;
+    border-right: thick solid var(--main-text-color);
+    text-indent: 50px;
+    /* padding: 5% 1em;
     margin-top: 10px;
     font-size: 150%;
     color: var(--main-text-color);
     background-color: #fff;
     align-items: flex-start;
+    display: block;
+    flex-direction: column; */
 }
 
-.side-design p {
-    text-indent: 50px;
-}
-
+/* About Me section */
 .about-me {
+    text-indent: 30px;
     margin: 2% 0;
     font-size: 80%;
 }
 
+/* Work section (needs Flex Boxes!!!) */
 .work {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 
+    /* border-style: solid;
+    border-width: 1px;
+    border-radius: 50px;
+    padding: 10px;
+    flex: 0 0 300px;
+    transform: rotate(8deg);
+    box-shadow: 10px 10px 5px #aaaaaa;
+    margin: 20px; */
 }
 
+.work > img {
+    width: 100%;
+}
+
+/* Needs to hover over each box for preview */
 .work:hover {
-
+    box-shadow: inset 0px 0px 8px rgb(138, 138, 138),
+    0 0 15px rgb(17, 16, 17);
 }
 
-.contact-me {
-
+/* Contact section */
+.contact {
+    border-bottom: var(--main-text-color);
 }
 
-/* Insert classes here */
-
-/*footer {
-    display: flex;
-    justify-content: center;
-    padding: 2%;
-    background-color: #8bc6fa;
-    color: #fff;
-}*/
-
-/* Media Queries */
+/* Media queries for size adjustments */
 @media screen and (max-width: 992px) {
-    .sidebar {
+    main, nav {
     flex-basis: 40%;
+    flex-direction: column;
     }
   }
   
 @media screen and (max-width: 768px) {
-    .sidebar {
+    main, nav {
       flex-basis: 100%;
       margin: 1em 0;
+      flex-direction: column;
     }
   }
