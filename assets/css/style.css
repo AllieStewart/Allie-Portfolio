@@ -72,13 +72,28 @@ h3 {
 /* Navigation elements for About Me, Work, Contact, and Resume */
 nav {
     display: inline;
-    font-size: 120%;
     justify-content: space-between;
     padding: 20px;
     color: #8ac8ff;
     text-decoration-line: underline;
     text-decoration-thickness: 5px;
 }
+
+/* Trying to fix ul design */
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    min-width: 300px;
+  }
+
+/* Separated nav links out a bit better */
+nav a {
+    font-size: 120%;
+    background-color: unset;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 20px;
+  }
 
 /* Crystal image */
 img {
