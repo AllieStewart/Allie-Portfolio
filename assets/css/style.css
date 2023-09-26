@@ -88,11 +88,13 @@ nav ul {
 
 /* Separated nav links out a bit better */
 nav a {
-    font-size: 120%;
-    background-color: unset;
+    display: flex;
+    font-size: 160%;
     font-weight: bold;
     text-decoration: none;
+    text-decoration: hide;
     padding: 20px;
+    text-shadow: 2px 2px 5px blue;
   }
 
 /* Crystal image */
