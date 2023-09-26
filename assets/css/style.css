@@ -1,8 +1,9 @@
 /* Root for main colors used throughout webpage */
 :root {
-    --main-text-color: #004d91;
-    --bkgrd-color: #fff;
-    --header-bkgrd: rgb(87, 104, 255);
+    --main-text-color: #1583e2;
+    --main-bkgrd-color: rgb(118, 222, 253);
+    --header-bkgrd: rgb(7, 21, 148);
+    --bkrd-color: #fff;
 }
 
 /* Wildcard to apply attributes to all selectors */
@@ -18,24 +19,37 @@ body {
     font-size: 16px;
     display: flex;
     flex-direction: column;
-    align-items: left;
+    align-items: right;
 }
 
 /* "Stewart" part of page, with border around name */
 h1 {
     display: inline-block;
-    border: 2px solid var(--main-text-color);
-    border-radius: 3px;
-    font-size: 200%;
+    height: auto;
+    width: auto;
+    border: 1px solid var(--main-text-color);
+    border-radius: 5px;
+    font-size: 400%;
     color: var(--main-text-color);
     background-color: var(--header-bkgrd);
+    text-shadow: 3px 4px 5px black;
 }
 
-/* Main text on crystal image and section names within the body */
+/* Main text on crystal image*/
 h2 {
     font-size: 1.5rem;
     margin-bottom: 10px;
     border-bottom: var(--main-text-color);
+    text-shadow: 3px 4px 5px black;
+}
+
+/* Section names within the body  */
+h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: var(--main-text-color);
+    border-bottom: var(--main-text-color);
+    text-shadow: 2px 2px 5px black;
 }
 
 /* Top part of page above crystal image, includes "Stewart" and the four sections on right, with downloadable resume */
@@ -43,9 +57,9 @@ h2 {
     display: flex;
     justify-content: space-between;
     text-align: left;
-    padding: 1%;
-    background-color: rgb(118, 222, 253);
-    color: #fff;
+    padding: 2%;
+    background-color: var(--main-bkgrd-color);
+    color: var(--bkrd-color);
     font-weight: 800;
 }
 
@@ -59,9 +73,9 @@ img {
 
 /* Main text box on crystal image */
 .sub-header h2 {
-    display: block;
+    display: inline-block;
     position: absolute;
-    bottom: 650px;
+    bottom: 600px;
     right: 20px;
     padding-left: 20px;
     padding-right: 20px;
@@ -91,21 +105,13 @@ main {
 
 /* Trying to place About Me, Work, and Contact to the side */
 .sidebar {
-    display: flex;
+    display: table-column;
 }
 
 /* The lines alongside the three titles in main (About Me, Work, Contact) */
 .side-design {
     border-right: thick solid var(--main-text-color);
     text-indent: 50px;
-    /* padding: 5% 1em;
-    margin-top: 10px;
-    font-size: 150%;
-    color: var(--main-text-color);
-    background-color: #fff;
-    align-items: flex-start;
-    display: block;
-    flex-direction: column; */
 }
 
 /* About Me section */
@@ -115,30 +121,53 @@ main {
     font-size: 80%;
 }
 
-/* Work section using Grids */
+.about-me > p {
+    table-layout: row;
+}
+
+/* Work section using Grids (boxes) */
 .work {
     display: grid;
     place-content: center;
     grid-auto-columns: 1fr;
+    gap: 1.5rem;
 
     padding-block: 2rem;
     width: min(95%, 70rem);
     margin-inline: auto;
+
+    border: solid 5px var(--main-text-color);
 }
 
-.work:first-child {
+/* Fix size of challenge_1 box */
+.work .challenge_1{
     grid-column-start: 1;
     grid-row: 1 / span 2;
 }
 
 /* Needs to hover over each box for preview */
 .work:hover {
-    box-shadow: inset 0px 0px 8px rgb(138, 138, 138),
-    0 0 15px rgb(17, 16, 17);
+    text-decoration: none;
+    background: grey;
+}
+
+/* Creating text boxes for each of the work project titles */
+.challenge_1, .challenge_3, .challenge_4, .challenge_5, .challenge_6 {
+    margin-top: 20px;
+    margin-left: 20px; 
+    text-align: left;
+    padding: 1%;
+    background-color: var(--main-bkgrd-color);
+    font-size: 25px;
+    font-family: sans-serif;
+    display: inline-block;
+    height: auto;
+    width: fit-content;
 }
 
 /* Contact section */
 .contact {
+    display: table-row;
     border-bottom: var(--main-text-color);
 }
 
