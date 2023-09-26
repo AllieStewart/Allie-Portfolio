@@ -3,44 +3,61 @@
     --main-text-color: #1583e2;
     --main-bkgrd-color: rgb(118, 222, 253);
     --header-bkgrd: rgb(7, 21, 148);
-    --bkrd-color: #fff;
+    --bkrd-color: #5d48d3;
+    --text-shadow: black;
 }
 
 /* Wildcard to apply attributes to all selectors */
 * {
     font-family: 'Helvetica', 'Arial', serif;
+    font-size: 100%;
     line-height: 1.5;
 }
 
 /* Body of page */
 body {
-    font-family: 'Helvetica', 'Arial', serif;
     min-height: 100vh;
     font-size: 16px;
     display: flex;
     flex-direction: column;
     align-items: right;
+    background-color: var(--bkrd-color);
 }
+
+/* Top part of page above crystal image, includes "Stewart" and the four sections on right, with downloadable resume */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+    padding: 2%;
+    background-color: var(--main-bkgrd-color);
+    color: var(--bkrd-color);
+    font-weight: 800;
+}
+
 
 /* "Stewart" part of page, with border around name */
 h1 {
     display: inline-block;
     height: auto;
-    width: auto;
+    width: max-content;
+    padding-right: 20px;
     border: 1px solid var(--main-text-color);
     border-radius: 5px;
     font-size: 400%;
     color: var(--main-text-color);
     background-color: var(--header-bkgrd);
-    text-shadow: 3px 4px 5px black;
+    text-shadow: 3px 4px 5px var(--text-shadow);
 }
 
-/* Main text on crystal image*/
+/* Main text on (well, under...) crystal image*/
 h2 {
     font-size: 1.5rem;
     margin-bottom: 10px;
     border-bottom: var(--main-text-color);
-    text-shadow: 3px 4px 5px black;
+    text-shadow: 3px 4px 5px var(--text-shadow);
 }
 
 /* Section names within the body  */
@@ -49,49 +66,40 @@ h3 {
     margin-bottom: 10px;
     color: var(--main-text-color);
     border-bottom: var(--main-text-color);
-    text-shadow: 2px 2px 5px black;
+    text-shadow: 2px 2px 5px var(--text-shadow);
 }
 
-/* Top part of page above crystal image, includes "Stewart" and the four sections on right, with downloadable resume */
-.main-header {
-    display: flex;
+/* Navigation elements for About Me, Work, Contact, and Resume */
+nav {
+    display: inline;
+    font-size: 120%;
     justify-content: space-between;
-    text-align: left;
-    padding: 2%;
-    background-color: var(--main-bkgrd-color);
-    color: var(--bkrd-color);
-    font-weight: 800;
+    padding: 20px;
+    color: #8ac8ff;
+    text-decoration-line: underline;
+    text-decoration-thickness: 5px;
 }
 
 /* Crystal image */
 img {
-    position: relative;
+    /* position: relative; */
     object-fit: cover;
     height: 200px;
     width: 100%;
 }
 
 /* Main text box on crystal image */
-.sub-header h2 {
+.sub-header > h2 {
     display: inline-block;
     position: absolute;
-    bottom: 600px;
+    bottom: 700px;
     right: 20px;
     padding-left: 20px;
     padding-right: 20px;
     background-color: var(--header-bkgrd);
     color: var(--main-text-color);
     font-weight: 800;
-}
-
-/* Navigation elements for About Me, Work, Contact, and Resume */
-nav {
-    display: flex;
-    justify-content: space-between;
-    min-width: 300px;
-    color: #8ac8ff;
-    text-decoration-line: underline;
-    text-decoration-thickness: 5px;
+    border-radius: 5px;
 }
 
 /* Main content of page */
@@ -103,26 +111,39 @@ main {
     flex-wrap: wrap;
 }
 
-/* Trying to place About Me, Work, and Contact to the side */
+/* Section for About Me, Work, Contact */
+section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/* To place About Me, Work, and Contact to the side */
 .sidebar {
-    display: table-column;
+    display: table-row;
+    position: static;
 }
 
 /* The lines alongside the three titles in main (About Me, Work, Contact) */
 .side-design {
     border-right: thick solid var(--main-text-color);
     text-indent: 50px;
+    /* position: static; */
 }
 
 /* About Me section */
 .about-me {
-    text-indent: 30px;
-    margin: 2% 0;
-    font-size: 80%;
+    display: block;
+    padding-left:15%;
+    padding-right:5%;
+    font-size: 120%;
 }
 
+/* About Me paragraph(s) */
 .about-me > p {
     table-layout: row;
+    color: white;
+    text-shadow: 2px 2px 5px var(--text-shadow);
 }
 
 /* Work section using Grids (boxes) */
@@ -130,25 +151,22 @@ main {
     display: grid;
     place-content: center;
     grid-auto-columns: 1fr;
-    gap: 1.5rem;
-
+    grid-column-gap: 10px;
+    grid-row-gap: 15px;
     padding-block: 2rem;
     width: min(95%, 70rem);
     margin-inline: auto;
-
     border: solid 5px var(--main-text-color);
-}
+    border-radius: 5px;
+    filter: blur(4px);
 
-/* Fix size of challenge_1 box */
-.work .challenge_1{
-    grid-column-start: 1;
-    grid-row: 1 / span 2;
 }
 
 /* Needs to hover over each box for preview */
 .work:hover {
     text-decoration: none;
-    background: grey;
+    filter: blur(0);
+    background: rgb(0, 61, 228);
 }
 
 /* Creating text boxes for each of the work project titles */
@@ -163,24 +181,49 @@ main {
     display: inline-block;
     height: auto;
     width: fit-content;
+    border-radius: 5px;
 }
 
 /* Contact section */
 .contact {
-    display: table-row;
+    display: flex;
+    flex-basis: auto;
+    justify-content: center;
     border-bottom: var(--main-text-color);
+    margin: 2%;
+}
+
+/* Contact section elements (phone number, email, GitHub, socials) */
+.contact ul > li {
+    display: inline-block;
+    height: auto;
+    width: fit-content;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-left: 20px; 
+    text-align: left;
+    padding: 1%;
+    background-color: var(--main-bkgrd-color);
+    justify-content: space-between;
+    padding: 20px;
+    font-size: 120%;
+    text-decoration-line: underline;
+    text-decoration-color: var(--bkrd-color);
+    text-decoration-thickness: 5px;
+    text-decoration-style: wavy;
+    border-radius: 5px;
 }
 
 /* Media queries for size adjustments */
 @media screen and (max-width: 992px) {
-    main, nav {
+    main, nav, .work, .side-design {
     flex-basis: 40%;
     flex-direction: column;
     }
   }
   
 @media screen and (max-width: 768px) {
-    main, nav {
+    main, nav, .work, .side-design {
       flex-basis: 100%;
       margin: 1em 0;
       flex-direction: column;
