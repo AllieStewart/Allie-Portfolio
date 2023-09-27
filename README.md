@@ -26,7 +26,7 @@ Link to the website: https://alliestewart.github.io/challenge-2/
 ![Alt text](assets/Screen1.png)
 
 --Start of Work--
-(Note how the project is no longer blurred when the mouse hovers over it.)
+(Note how the project is no longer grey when the mouse hovers over it.)
 (Additionally, only Challenge 1 has a working link, the rest just link back to my GitHub.)
 ![Alt text](assets/Screen2.png)
 

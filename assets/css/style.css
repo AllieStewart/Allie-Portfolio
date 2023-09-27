@@ -174,14 +174,14 @@ section {
     margin-inline: auto;
     border: solid 5px var(--main-text-color);
     border-radius: 5px;
-    filter: blur(4px);
+    filter: grayscale();
 
 }
 
 /* Needs to hover over each box for preview */
 .work:hover {
     text-decoration: none;
-    filter: blur(0);
+    filter: none;
     background: rgb(0, 61, 228);
 }
 
