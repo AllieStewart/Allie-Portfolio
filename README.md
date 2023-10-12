@@ -1,6 +1,6 @@
 # Challenge-2
 
-# Descriptiom
+## Description
 Challenge 2 coursework for UT bootcamp. This challenge represents
 my portfolio on GitHub, with the challenges and projects to be 
 completed, to show. For the time being, there are placeholders
