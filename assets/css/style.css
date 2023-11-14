@@ -186,7 +186,7 @@ section {
 }
 
 /* Creating text boxes for each of the work project titles */
-.challenge_1, .challenge_3, .challenge_4, .challenge_5, .challenge_6, .project_1 {
+.challenge, .project {
     margin-top: 20px;
     margin-left: 20px; 
     text-align: left;
