@@ -18,7 +18,7 @@ section with ways of getting into contact with me. There is
 also a 'Resume' section on the top right.
 
 Simply click on the link and watch the magic happen.
-Link to the website: https://alliestewart.github.io/challenge-2/
+Link to the website: https://alliestewart.github.io/Allie-Portfolio/
 
 ## Screenshots
 --Top of page and About Me--
